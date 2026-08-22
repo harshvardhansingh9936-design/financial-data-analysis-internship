@@ -206,3 +206,68 @@ Advanced financial visualizations.
 Additional statistical analysis.
 
 This repository is maintained as part of my Financial Data Analysis Internship and documents the development of the project from data acquisition through exploratory and financial analysis.
+## Week 2 — Data Wrangling & Processing
+
+Week 2 extends the Week 1 AAPL market-data acquisition workflow into a reproducible data-cleaning and processing pipeline.
+
+### Dataset
+
+- Security: Apple Inc. (AAPL)
+- Period: January 2, 2020 to December 31, 2024
+- Raw observations: 1,258
+- Variables: Date, Open, High, Low, Close, Volume
+
+### Data Quality Results
+
+The Week 2 workflow performed structural and financial-domain validation on the raw AAPL dataset.
+
+| Quality Check | Result |
+|---|---:|
+| Raw observations | 1,258 |
+| Columns | 6 |
+| Missing dates | 0 |
+| Exact duplicate rows | 0 |
+| Duplicate dates | 0 |
+| Negative OHLCV values | 0 |
+| OHLC consistency violations | 0 |
+| Cleaned observations | 1,258 |
+
+No observations were removed during the documented basic cleaning stage because the dataset passed the missing-value, duplicate, date, and financial-domain checks.
+
+### Feature Engineering
+
+The following analysis-ready features were created:
+
+- Daily percentage return
+- Log return
+- Intraday range percentage
+- Volume change percentage
+- 20-day rolling annualized volatility
+- Year
+- Log-transformed trading volume
+
+### Outlier Detection
+
+Two return-based screening methods were applied:
+
+- IQR method: 52 observations flagged
+- Z-score method (|z| ≥ 3): 18 observations flagged
+- IQR lower bound: approximately -3.90%
+- IQR upper bound: approximately +4.26%
+
+Outliers were flagged for investigation rather than automatically removed because unusually large financial returns may represent genuine market events.
+
+For example, March 16, 2020 recorded a daily return of approximately -12.86% with a z-score of approximately -6.51, while March 13, 2020 recorded approximately +11.98% with a z-score of approximately +5.94.
+
+### Week 2 Files
+
+- `notebooks/02_week2_data_wrangling_and_processing.ipynb`
+- `src/week2_data_wrangling.py`
+- `data/processed/AAPL_cleaned.csv`
+- `reports/week2_quality_summary.csv`
+
+### Reproducibility
+
+The raw AAPL dataset is preserved in `data/AAPL.csv`. The cleaned dataset is stored separately in `data/processed/AAPL_cleaned.csv`, while the quality-control metrics are saved in `reports/week2_quality_summary.csv`.
+
+The Week 2 workflow uses Python, pandas, NumPy, and Matplotlib and can be reproduced through the Jupyter notebook or the reusable processing script.
