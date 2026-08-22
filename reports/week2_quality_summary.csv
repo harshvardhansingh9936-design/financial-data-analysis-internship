@@ -1,0 +1,11 @@
+metric,value
+raw_loaded_rows,1258
+raw_columns,6
+missing_dates,0
+exact_duplicate_rows,0
+duplicate_date_rows,0
+negative_value_rows,0
+ohlc_consistency_violations,0
+cleaned_rows,1258
+IQR_return_outlier_flags,52
+Z_return_outlier_flags,18
