@@ -1,273 +1,129 @@
 # Financial Data Analysis Internship
 
+This repository documents a four-week financial data analysis project using historical Apple Inc. (AAPL) daily market data. The workflow progresses from planning and acquisition through cleaning, exploratory analysis, visualization, and predictive modeling.
+
+## Project Dataset
+
+- **Security:** Apple Inc. (AAPL), Nasdaq
+- **Period:** January 2, 2020 – December 31, 2024
+- **Primary variables:** Open, High, Low, Close, Volume
+- **Processed dataset:** `data/processed/AAPL_cleaned.csv`
+- **Workflow:** Python, pandas, NumPy, Matplotlib, scikit-learn, Jupyter Notebook, Git/GitHub
+
 ## Week 1 — Data Acquisition & Preliminary Analysis
 
-This repository contains my work for the Financial Data Analysis Internship.
+Week 1 established the project scope, research questions, data source, reproducible Python workflow, and initial AAPL dataset. Historical AAPL OHLCV data was acquired using `yfinance` and saved as `data/AAPL.csv`.
 
-The Week 1 task focuses on acquiring publicly available financial market data, storing it in a structured format, and performing preliminary data inspection using Python.
+**Main deliverables**
+- `notebooks/01_week1_data_acquisition_and_eda.ipynb`
+- `reports/Week_1_Financial_Analytics_Project_Plan_Final.docx`
+- `data/AAPL.csv`
 
-## Project Objectives
-
-The main objectives of this project are to:
-
-- Identify publicly accessible financial data sources.
-- Acquire historical financial market data using Python.
-- Store acquired data in a structured and reusable format.
-- Inspect the dataset for structure, completeness, and consistency.
-- Prepare the dataset for data cleaning and exploratory analysis.
-- Develop a reproducible Python-based financial data analysis workflow.
-- Establish a foundation for subsequent financial analysis and visualization.
-
-## Data Source
-
-### Yahoo Finance
-
-The Week 1 analysis uses historical market data for Apple Inc. (AAPL), obtained through the `yfinance` Python library.
-
-The dataset covers the period from January 2, 2020 to December 31, 2024.
-
-The dataset contains the following market variables:
-
-- Open price
-- High price
-- Low price
-- Close price
-- Trading volume
-
-The downloaded dataset is stored locally in:
-
-`data/AAPL.csv`
-
-## Technologies & Libraries
-
-| Technology / Library | Purpose |
-|---|---|
-| Python | Primary programming language for data acquisition and analysis |
-| pandas | Data loading, cleaning, manipulation, and analysis |
-| NumPy | Numerical operations and analytical calculations |
-| Matplotlib | Data visualization and plotting |
-| yfinance | Retrieval of historical financial market data from Yahoo Finance |
-| Jupyter Notebook | Interactive analysis, documentation, and presentation of results |
-| Git | Version control and project tracking |
-| GitHub | Project repository and version-controlled collaboration |
-
-## Repository Structure
-
-```text
-financial-data-analysis-internship/
-│
-├── data/
-│   └── AAPL.csv
-│
-├── figures/
-│
-├── notebooks/
-│   └── 01_week1_data_acquisition_and_eda.ipynb
-│
-├── reports/
-│
-├── src/
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
-Week 1 Progress
-Completed
-Created and configured the GitHub repository.
-Established a structured project directory.
-Set up the Python development environment in VS Code.
-Created a project-specific Python virtual environment.
-Installed the required Python libraries.
-Configured the Jupyter Notebook environment.
-Created the Week 1 analysis notebook.
-Retrieved historical AAPL market data using yfinance.
-Saved the downloaded dataset as data/AAPL.csv.
-Reloaded the saved dataset using pandas.
-Inspected the dataset dimensions and column structure.
-Established a reproducible workflow for future analysis.
-Dataset Summary
-
-The current AAPL dataset contains:
-
-1,260 observations
-5 market variables
-Daily historical market data
-Date-based observations
-Open, High, Low, Close, and Volume information
-
-The dataset was successfully downloaded, saved locally, and loaded again using Python for validation.
-
-Preliminary Analysis Plan
-
-The next stages of the project will focus on:
-
-Checking data types and data quality.
-Identifying missing or invalid values.
-Cleaning and preprocessing the dataset.
-Calculating daily percentage returns.
-Examining historical price trends.
-Measuring and visualizing market volatility.
-Exploring relationships between price and trading volume.
-Creating informative financial visualizations.
-Identifying potential risk factors and market patterns.
-Summarizing the preliminary findings.
-Key Questions for Analysis
-
-The planned analysis will investigate questions such as:
-
-How has the AAPL stock price changed over the selected period?
-What major trends can be observed in the historical price data?
-How volatile has the stock been over time?
-What periods show unusually large price movements?
-How are daily returns distributed?
-Is there any observable relationship between trading volume and price movements?
-What preliminary risk factors can be identified from the historical data?
-Data Acquisition Approach
-
-The planned data acquisition workflow is:
-
-Identify a reliable and publicly accessible financial data source.
-Select the financial instrument and required historical period.
-Use Python and yfinance to retrieve the historical market data.
-Store the downloaded data in CSV format.
-Load the saved data using pandas.
-Validate the dataset structure and dimensions.
-Prepare the dataset for cleaning and exploratory analysis.
-
-This approach is designed to make the analysis reproducible and easy to extend to additional financial instruments in later stages.
-
-Data Cleaning Approach
-
-The planned data cleaning process will include:
-
-Checking for missing values.
-Checking for duplicate observations.
-Verifying data types.
-Ensuring dates are correctly formatted.
-Checking numerical columns for invalid values.
-Reviewing the consistency of the dataset.
-Preparing clean variables for further analysis.
-Preliminary Analysis Approach
-
-After data cleaning, the analysis will include:
-
-Descriptive statistics.
-Historical price trend analysis.
-Daily return calculations.
-Volatility analysis.
-Trading volume analysis.
-Time-series visualizations.
-Identification of unusual movements and potential risk periods.
-
-The analysis will use pandas and NumPy for numerical and tabular operations and Matplotlib for visualization.
-
-Reproducibility
-
-To reproduce the analysis:
-
-Clone this repository from GitHub.
-Create a Python virtual environment.
-Activate the virtual environment.
-Install the dependencies listed in requirements.txt.
-Open the Week 1 Jupyter Notebook.
-Run the notebook cells sequentially.
-
-The project structure and dependency file are maintained to support reproducibility.
-
-Project Status
-
-Current Stage: Week 1 — Data Acquisition & Preliminary Analysis
-
-Status: In Progress
-
-Current Deliverables
-GitHub repository setup
-Python environment setup
-Historical AAPL dataset
-Data acquisition notebook
-Initial dataset inspection
-Project documentation
-Upcoming Deliverables
-Data cleaning
-Exploratory data analysis
-Financial return calculations
-Volatility analysis
-Data visualizations
-Analytical findings and conclusions
-Future Development
-
-The project may later be extended to include:
-
-Analysis of additional stocks or financial instruments.
-Comparative performance analysis.
-Portfolio-level analysis.
-Risk and return metrics.
-Advanced financial visualizations.
-Additional statistical analysis.
-
-This repository is maintained as part of my Financial Data Analysis Internship and documents the development of the project from data acquisition through exploratory and financial analysis.
 ## Week 2 — Data Wrangling & Processing
 
-Week 2 extends the Week 1 AAPL market-data acquisition workflow into a reproducible data-cleaning and processing pipeline.
+Week 2 transformed the raw AAPL data into a validated analysis-ready dataset. The workflow checked missing dates, duplicates, negative values, and OHLC consistency, then engineered returns, log returns, intraday range, volume change, rolling volatility, year, and log-transformed volume.
 
-### Dataset
+The processed dataset contains 1,258 observations after the documented validation workflow. Return-based IQR and Z-score methods were used to flag potential outliers for investigation rather than automatic deletion.
 
-- Security: Apple Inc. (AAPL)
-- Period: January 2, 2020 to December 31, 2024
-- Raw observations: 1,258
-- Variables: Date, Open, High, Low, Close, Volume
-
-### Data Quality Results
-
-The Week 2 workflow performed structural and financial-domain validation on the raw AAPL dataset.
-
-| Quality Check | Result |
-|---|---:|
-| Raw observations | 1,258 |
-| Columns | 6 |
-| Missing dates | 0 |
-| Exact duplicate rows | 0 |
-| Duplicate dates | 0 |
-| Negative OHLCV values | 0 |
-| OHLC consistency violations | 0 |
-| Cleaned observations | 1,258 |
-
-No observations were removed during the documented basic cleaning stage because the dataset passed the missing-value, duplicate, date, and financial-domain checks.
-
-### Feature Engineering
-
-The following analysis-ready features were created:
-
-- Daily percentage return
-- Log return
-- Intraday range percentage
-- Volume change percentage
-- 20-day rolling annualized volatility
-- Year
-- Log-transformed trading volume
-
-### Outlier Detection
-
-Two return-based screening methods were applied:
-
-- IQR method: 52 observations flagged
-- Z-score method (|z| ≥ 3): 18 observations flagged
-- IQR lower bound: approximately -3.90%
-- IQR upper bound: approximately +4.26%
-
-Outliers were flagged for investigation rather than automatically removed because unusually large financial returns may represent genuine market events.
-
-For example, March 16, 2020 recorded a daily return of approximately -12.86% with a z-score of approximately -6.51, while March 13, 2020 recorded approximately +11.98% with a z-score of approximately +5.94.
-
-### Week 2 Files
-
+**Main deliverables**
 - `notebooks/02_week2_data_wrangling_and_processing.ipynb`
 - `src/week2_data_wrangling.py`
 - `data/processed/AAPL_cleaned.csv`
 - `reports/week2_quality_summary.csv`
 
-### Reproducibility
+## Week 3 — Exploratory Data Analysis & Visualization
 
-The raw AAPL dataset is preserved in `data/AAPL.csv`. The cleaned dataset is stored separately in `data/processed/AAPL_cleaned.csv`, while the quality-control metrics are saved in `reports/week2_quality_summary.csv`.
+Week 3 performed descriptive statistical analysis and six computed visualizations using the validated processed dataset. It examined price trends, return distribution, rolling volatility, trading volume, volume versus absolute return, and year-wise performance. Outlier periods were also investigated in context.
 
-The Week 2 workflow uses Python, pandas, NumPy, and Matplotlib and can be reproduced through the Jupyter notebook or the reusable processing script.
+**Main deliverables**
+- `notebooks/03_week3_eda_and_visualization.ipynb`
+- `src/week3_eda.py`
+- `reports/Week_3_AAPL_EDA_Visualization_Report.docx`
+- `figures/week3/fig1_close_price.png`
+- `figures/week3/fig2_return_hist.png`
+- `figures/week3/fig3_rolling_volatility.png`
+- `figures/week3/fig4_volume.png`
+- `figures/week3/fig5_volume_vs_absreturn.png`
+- `figures/week3/fig6_annual_return.png`
+
+## Week 4 — Predictive Modeling & Performance Evaluation
+
+Week 4 extends the same AAPL project into predictive modeling. The unchanged processed dataset is used to construct modeling-specific features and next-day targets. The primary target is next-day closing price; a secondary model predicts next-day return as a harder test of forecasting signal.
+
+### Modeling approach
+
+- Modeling features: Close, Volume, Rolling_Volatility_20D, Intraday_Range_Pct, Daily_Return, SMA_5, SMA_10
+- Return-model features: Volume, Rolling_Volatility_20D, Intraday_Range_Pct, Daily_Return, Volume_Change_Pct
+- Target: next-day Close using `shift(-1)`
+- Secondary target: next-day Daily_Return using `shift(-1)`
+- Split: chronological 80/20 train/test split; no random shuffling
+- Test period: 2024
+- Models: naive persistence baseline, Close-only Linear Regression, multivariate Linear Regression, and next-day return Linear Regression
+- Metrics: R², MSE, RMSE, MAE
+
+### Week 4 test-set results
+
+| Model | Test R² | Test RMSE | Test MAE |
+|---|---:|---:|---:|
+| Naive persistence | 0.9873 | $2.870 | $2.111 |
+| Close-only Linear Regression | 0.9871 | $2.894 | $2.155 |
+| Multivariate Linear Regression | 0.9868 | $2.932 | $2.204 |
+
+The multivariate model does not outperform the naive persistence baseline on the held-out 2024 test period. The secondary next-day return model achieves test R² of approximately -0.057, indicating little useful linear predictive signal from the selected price/volume-derived features.
+
+### Week 4 deliverables
+
+- `notebooks/04_week4_predictive_modeling.ipynb`
+- `src/week4_predictive_modeling.py`
+- `reports/Week_4_AAPL_Predictive_Modeling_Report.docx`
+- `reports/model2_test_predictions.csv`
+- `reports/model3_test_predictions.csv`
+- `figures/week4/figA_actual_vs_predicted.png`
+- `figures/week4/figB_predicted_vs_actual.png`
+- `figures/week4/figC_residuals.png`
+- `figures/week4/figD_rmse_comparison.png`
+- `figures/week4/figE_return_prediction.png`
+
+## Final Project Structure
+
+```text
+financial-data-analysis-internship/
+├── data/
+│   ├── AAPL.csv
+│   └── processed/
+│       └── AAPL_cleaned.csv
+├── figures/
+│   ├── week3/
+│   └── week4/
+├── notebooks/
+│   ├── 01_week1_data_acquisition_and_eda.ipynb
+│   ├── 02_week2_data_wrangling_and_processing.ipynb
+│   ├── 03_week3_eda_and_visualization.ipynb
+│   └── 04_week4_predictive_modeling.ipynb
+├── reports/
+│   ├── Week_1_Financial_Analytics_Project_Plan_Final.docx
+│   ├── Week_3_AAPL_EDA_Visualization_Report.docx
+│   ├── Week_4_AAPL_Predictive_Modeling_Report.docx
+│   ├── week2_quality_summary.csv
+│   ├── model2_test_predictions.csv
+│   └── model3_test_predictions.csv
+├── src/
+│   ├── week2_data_wrangling.py
+│   ├── week3_eda.py
+│   └── week4_predictive_modeling.py
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
+## Reproducibility
+
+The analysis is organized as sequential weekly stages. The Week 4 modeling script reads the processed Week 2/3 dataset and regenerates the predictive-model outputs.
+
+From the repository root:
+
+```bash
+python src/week4_predictive_modeling.py
+```
+
+No investment recommendation is intended. The project evaluates forecasting difficulty and demonstrates a reproducible financial-data-analysis workflow.
